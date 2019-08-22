@@ -49,3 +49,34 @@
 		}
 	}
 }
+
+@media screen and (max-width: 800px) {
+	.collection-item {
+		width: 40vw;
+
+		&:hover {
+			.image {
+				opacity: unset;
+			}
+
+			.custom-button {
+				opacity: 0.9;
+				display: block;
+				padding: 0px 10px 0px 10px;
+			}
+		}
+		&:focus {
+			.custom-button {
+				color: red;
+			}
+		}
+
+		.custom-button {
+			opacity: 0.9;
+			display: block;
+			min-width: unset;
+			padding: 0px 10px 0px 10px;
+			border: 1.5px solid #000;
+		}
+	}
+}

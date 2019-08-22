@@ -67,3 +67,13 @@
 		}
 	}
 }
+
+@media (max-width: 800px) {
+	.menu-item.large {
+		height: 200px;
+	}
+
+	.menu-item {
+		height: 200px;
+	}
+}
