@@ -1,35 +1,21 @@
-# DevConnector
+# Crown Clothing
 
-> Social network for developers
+> E-Commerce Site Built with React, Redux, Redux-Saga, Firebase & GraphQL.
 
-This is a MERN stack application made by me. It is a small social network app that includes authentication, profiles and forum posts.
+- This is a Full Stack Application developed my me. It is a E-Commerce Clothing site with stripe payments and the code is well written.
 
 ## Quick Start
 
 ```
-# change default.json file in config folder
-
-# this file is located in config/default.json
-
-# add uri of your mongodb connection for example
-
- "mongoURI": "mongodb://localhost/dev-social",
-
-```
-
-```bash
-# Install server dependencies
-npm install
+# First fork and clone this repo
 
 # Install client dependencies
-cd client
 npm install
 
-# Run both Express & React from root
-npm run dev
+# Run React Application Server
+npm run start
 
 # Build for production
-cd client
 npm run build
 ```
 
@@ -37,12 +23,12 @@ npm run build
 
 ### Author
 
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
+Muhammad Ali Kazmi
+[Muhammad Ali](https://kaaazmi.github.io)
 
 ### Version
 
-2.0.0
+1.0.0
 
 ### License
 
