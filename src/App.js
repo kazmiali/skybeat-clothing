@@ -31,11 +31,7 @@ const App = ({ fetchCurrentUser, currentUser }) => {
 					exact
 					path='/signin'
 					render={() =>
-						this.props.currentUser ? (
-							<Redirect to='/' />
-						) : (
-							<SignInAndSignUpPage />
-						)
+						currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />
 					}
 				/>
 			</Switch>
