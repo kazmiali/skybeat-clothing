@@ -56,18 +56,13 @@
 
 		&:hover {
 			.image {
-				opacity: unset;
+				opacity: 1;
 			}
 
 			.custom-button {
 				opacity: 0.9;
 				display: block;
 				padding: 0px 10px 0px 10px;
-			}
-		}
-		&:focus {
-			.custom-button {
-				color: red;
 			}
 		}
 
