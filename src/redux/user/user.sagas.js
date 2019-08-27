@@ -69,9 +69,23 @@ export function* signUp({ payload: { email, password, displayName } }) {
 	try {
 		const { user } = yield auth.createUserWithEmailAndPassword(email, password);
 		yield createUserProfileDocument(user, { displayName });
-		yield put(signUpSuccess());
+		yield put(
+			signUpSuccess({
+				email: email,
+				password: password
+			})
+		);
 	} catch (error) {
 		yield put(signUpFailure(error));
+	}
+}
+
+export function* signInOnSignUpSuccess({ payload: { email, password } }) {
+	try {
+		const { user } = yield auth.signInWithEmailAndPassword(email, password);
+		yield getSnapshotFromUserAuth(user);
+	} catch (error) {
+		put(signInFailure(error));
 	}
 }
 
@@ -95,12 +109,17 @@ export function* onSignUpStart() {
 	yield takeLatest(UserActionTypes.SIGN_UP_START, signUp);
 }
 
+export function* onSignUpSuccess() {
+	yield takeLatest(UserActionTypes.SIGN_UP_SUCCESS, signInOnSignUpSuccess);
+}
+
 export function* userSagas() {
 	yield all([
 		call(onGoogleSignInStart),
 		call(onEmailSignInStart),
 		call(onCheckUserSession),
 		call(onSignOutStart),
-		call(onSignUpStart)
+		call(onSignUpStart),
+		call(onSignUpSuccess)
 	]);
 }
