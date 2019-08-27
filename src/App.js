@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -9,38 +9,42 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import ShopPage from './pages/shop/shop.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 
-import { fetchCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+import { checkUserSession } from './redux/user/user.actions';
 
 import { GlobalStyle } from './global.styles';
 
-const App = ({ fetchCurrentUser, currentUser }) => {
-	useEffect(() => {
-		fetchCurrentUser();
-	}, [fetchCurrentUser]);
+class App extends Component {
+	componentDidMount() {
+		const { checkUserSession } = this.props;
+		checkUserSession();
+	}
 
-	return (
-		<div>
-			<GlobalStyle />
-			<Header />
-			<Switch>
-				<Route exact path='/' component={HomePage} />
-				<Route path='/shop' component={ShopPage} />
-				<Route exact path='/checkout' component={CheckoutPage} />
-				<Route
-					exact
-					path='/signin'
-					render={() =>
-						currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />
-					}
-				/>
-			</Switch>
-		</div>
-	);
-};
+	render() {
+		const { currentUser } = this.props;
+		return (
+			<div>
+				<GlobalStyle />
+				<Header />
+				<Switch>
+					<Route exact path='/' component={HomePage} />
+					<Route path='/shop' component={ShopPage} />
+					<Route exact path='/checkout' component={CheckoutPage} />
+					<Route
+						exact
+						path='/signin'
+						render={() =>
+							currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />
+						}
+					/>
+				</Switch>
+			</div>
+		);
+	}
+}
 
 const mapDispatchToProps = dispatch => ({
-	fetchCurrentUser: () => dispatch(fetchCurrentUser())
+	checkUserSession: () => dispatch(checkUserSession())
 });
 
 const mapStateToProps = createStructuredSelector({

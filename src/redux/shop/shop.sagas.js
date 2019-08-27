@@ -1,4 +1,4 @@
-import { takeEvery, call, put } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects';
 // sagas don't use dispatch to dispatch actions but use put
 
 import {
@@ -22,28 +22,11 @@ export function* fetchCollectionsStartAsync() {
 	} catch (error) {
 		yield put(fetchCollectionsFailure());
 	}
-
-	// collectionRef
-	// 	.get()
-	// 	.then(snapShot => {
-	// 		const collectionsMap = convertCollectionSnapshotToMap(snapShot);
-	// 		dispatch(fetchCollectionsSuccess(collectionsMap));
-	// 	})
-	// 	.catch(error => dispatch(fetchCollectionsFailure(error.message)));
 }
 
 export function* fetchCollectionsStart() {
-	yield takeEvery(
+	yield takeLatest(
 		ShopActionTypes.FETCH_COLLECTIONS_START,
 		fetchCollectionsStartAsync
 	);
 }
-
-/**
- * Explanation
- *
- * takeEvery runs when a actionType comes of its interest
- *
- * call is the effect inside of our generator function that invokes that method
- *
- * */
