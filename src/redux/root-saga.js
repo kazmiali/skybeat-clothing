@@ -1,11 +1,11 @@
 import { all, call } from 'redux-saga/effects';
 
-import { fetchCollectionsStart } from './shop/shop.sagas';
+import { shopSagas } from './shop/shop.sagas';
 import { userSagas } from './user/user.sagas';
 import { cartSagas } from './cart/cart.sagas';
 
 export function* rootSaga() {
-	yield all([call(fetchCollectionsStart), call(userSagas), call(cartSagas)]);
+	yield all([call(shopSagas), call(userSagas), call(cartSagas)]);
 }
 
 // all effects runs all the sagas in the array concurrentlyc
