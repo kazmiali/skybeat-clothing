@@ -86,7 +86,9 @@ const SignUp = ({ signUpStart }) => {
 					label={'Confirm Password'}
 					required
 				/>
-				<CustomButton type='submit'>{'Sign Up'.toUpperCase()}</CustomButton>
+				<div className='buttons'>
+					<CustomButton type='submit'>{'Sign Up'.toUpperCase()}</CustomButton>
+				</div>
 			</form>
 		</div>
 	);
