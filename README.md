@@ -1,6 +1,6 @@
 # Crwn-Clothing - React App w/ Redux, Firebase & Stripe.
 
-- Its a E-Commerce clothing store, created with React, react-router, redux, redux-saga, firebase, and stripe with basic express server.
+- Its a E-Commerce clothing store, created with React, react-router, redux, redux-saga, firebase, and stripe with basic NodeJS Express server.
 
 ## Features
 
