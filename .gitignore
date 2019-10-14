@@ -30,6 +30,8 @@ crwn-clothing.code-workspace
 
 .env
 
+/.vscode
+
 /client/npm-debug.log*
 /client/yarn-debug.log*
 /client/yarn-error.log*
