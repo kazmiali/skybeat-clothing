@@ -26,10 +26,10 @@ cd crwn-clothing  # navigate to project folder
 ### Install dependencies
 
 ```bash
-npm install # install nodejs server dependencies
+npm/yarn install # install nodejs server dependencies
 
 cd client # cd into the client folder
-npm install # install react app dependencies
+npm/yarn install # install react app dependencies
 
 cd .. # go back to project's root
 ```
@@ -47,7 +47,7 @@ STRIPE_SECRET_KEY=yourkey
 Make sure you're at the project's root
 
 ```bash
-npm run dev
+npm/yarn run dev
 
 # starts both the client (React) and server (NestJS) apps in watch mode
 # the react app runs at port 3000 while the nestjs server runs at 5000
@@ -56,12 +56,12 @@ npm run dev
 ## Running NodeJS server only
 
 ```bash
-npm run start
+npm/yarn run start
 ```
 
 ## Running React app only
 
 ```bash
 cd client
-npm run start
+npm/yarn run start
 ```
