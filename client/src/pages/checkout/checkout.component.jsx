@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -41,12 +41,16 @@ const CheckoutPage = ({ cartItems, total }) => (
 			<CheckoutItem key={cartItem.id} cartItem={cartItem} />
 		))}
 		<TotalContainer>TOTAL: ${total}</TotalContainer>
-		<WarningContainer>
-			*Please use the following test credit card for payments*
-			<br />
-			4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
-		</WarningContainer>
-		<StripeCheckoutButton price={total} />
+		{total !== 0 ? (
+			<Fragment>
+				<WarningContainer>
+					*Please use the following test credit card for payments*
+					<br />
+					4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
+				</WarningContainer>
+				<StripeCheckoutButton price={total} />
+			</Fragment>
+		) : null}
 	</CheckoutPageContainer>
 );
 

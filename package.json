@@ -3,15 +3,15 @@
 	"version": "1.0.0",
 	"engines": {
 		"node": "10.16.0",
-		"npm": "6.11.2"
+		"yarn": "1.17.3"
 	},
 	"scripts": {
-		"client": "cd client && npm start",
+		"client": "cd client && yarn start",
 		"server": "nodemon server.js",
-		"build": "cd client && npm run build",
-		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+		"build": "cd client && yarn run build",
+		"dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
 		"start": "node server.js",
-		"heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+		"heroku-postbuild": "cd client && yarn install && yarn install --only=dev --no-shrinkwrap && yarn run build"
 	},
 	"dependencies": {
 		"body-parser": "^1.18.3",
