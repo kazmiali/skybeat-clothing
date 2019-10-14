@@ -9,7 +9,7 @@ yarn-error.log*
 crwn-clothing.code-workspace
 
 # dependencies
-/node_modules
+node_modules
 /client/node_modules
 /client/.pnp
 /client/.pnp.js
