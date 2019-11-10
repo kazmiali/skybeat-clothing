@@ -35,6 +35,12 @@ app.get('/service-worker.js', (req, res) => {
 	res.sendFile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
 });
 
+console.log('working');
+app.get('/firebasekey', (req, res) => {
+	console.log('working get');
+	res.status(200).send({ status: working });
+});
+
 app.post('/payment', (req, res) => {
 	const body = {
 		source: req.body.token.id,

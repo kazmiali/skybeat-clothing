@@ -2,6 +2,7 @@ import React, { useEffect, Suspense, lazy } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import axios from 'axios';
 
 import Header from './components/header/header.component';
 import Spinner from './components/spinner/spinner.component';
@@ -23,6 +24,15 @@ const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
 const App = ({ checkUserSession, currentUser }) => {
 	useEffect(() => {
 		checkUserSession();
+		axios
+			.get('/firebasekey')
+			.then(function(response) {
+				console.log(response);
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
+		// fetch('firebasekey').then(res => console.log(res));
 	}, [checkUserSession]);
 
 	return (
