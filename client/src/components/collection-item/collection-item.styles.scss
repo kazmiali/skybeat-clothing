@@ -14,6 +14,7 @@
     margin-bottom: 5px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
       0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s;
   }
 
   .custom-button {
@@ -40,6 +41,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 18px;
+    font-weight: 900;
 
     .name {
       width: 90%;

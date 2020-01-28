@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
   cursor: pointer;
 
   .shopping-icon {
@@ -18,5 +19,9 @@
     font-weight: bold;
     bottom: 17.5px;
     left: 49%;
+  }
+
+  &:hover {
+    background-color: #dfa909;
   }
 }
