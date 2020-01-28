@@ -13,6 +13,7 @@ body {
 	margin: 0px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: #fdf1c8;
   
  }
 
