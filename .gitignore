@@ -7,7 +7,6 @@ yarn-error.log*
 
 # vsc workspace file
 skybeat.code-workspace
-.vscode
 
 # dependencies
 node_modules
