@@ -1,4 +1,4 @@
-# Crwn-Clothing - React App w/ Redux, Firebase & Stripe.
+# SkyBeat Clothing - React App w/ Redux, Firebase & Stripe.
 
 - Its a E-Commerce clothing store, created with React, react-router, redux, redux-saga, Firebase, and Stripe with basic NodeJS Express server.
 
@@ -18,9 +18,9 @@ Please install [Git](https://git-scm.com/downloads) & [NodeJS](https://nodejs.or
 ### Clone the repo
 
 ```bash
-git clone https://github.com/kazmiali/crwn-clothing.git crwn-clothing  # clone the repository
+git clone https://github.com/kazmiali/skybeat-clothing.git skybeat-clothing  # clone the repository
 
-cd crwn-clothing  # navigate to project folder
+cd skybeat-clothing  # navigate to project folder
 ```
 
 ### Install dependencies

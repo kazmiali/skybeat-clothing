@@ -5,17 +5,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
   cursor: pointer;
 
   .shopping-icon {
-    width: 24px;
-    height: 24px;
+    width: 27px;
+    height: 27px;
   }
 
   .item-count {
     position: absolute;
     font-size: 10px;
     font-weight: bold;
-    bottom: 12px;
+    bottom: 17.5px;
+    left: 49%;
+  }
+
+  &:hover {
+    background-color: #dfa909;
   }
 }
